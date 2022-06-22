@@ -140,7 +140,7 @@ export const ApiProvider = ({ dapp, children }: PropsType): JSX.Element => {
           : 'devnet';
       const u = rpcUrl || URLS[n]; // TODO: Move to protocol/web3
       const connection = new Connection(u, 'recent');
-      const provider = new anchor.Provider(
+      const provider = new anchor.AnchorProvider(
         connection,
         wallet as anchor.Wallet, // TODO: Check that this cast is acceptable
         anchor.Provider.defaultOptions()
